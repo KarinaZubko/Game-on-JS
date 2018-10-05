@@ -41,6 +41,13 @@ ul li:nth-child(odd) {
 }
 
 
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
 /* Add a "checked" mark when clicked on */
 ul li.checked::before {
   content: '';
@@ -108,6 +115,9 @@ input {
   border-radius: 0;
 }
 
+.addBtn:hover {
+  background-color: #bbb;
+}
 </style>
 </head>
 <body>
@@ -122,7 +132,6 @@ input {
 </ul>
 
 <script>
-
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
