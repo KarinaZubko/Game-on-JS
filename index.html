@@ -6,7 +6,7 @@
 <title>Крестики Нолики</title>
 </head>
 
-<body bgcolor="#FFFFFF">
+<body bgcolor="#999CC">
 
 <p>&nbsp;</p>
 
@@ -35,7 +35,7 @@ empty2==empty5 && empty5==empty8 && empty8==0 ||
 empty3==empty6 && empty6==empty9 && empty9==0 ||
 empty1==empty5 && empty5==empty9 && empty9==0 ||
 empty3==empty5 && empty5==empty7 && empty7==0 ){
-alert ("Player 1: YOU WON !!!");
+alert ("Выиграл Игрок №1");
 history.go(0)
 }
 if (empty1==empty2 && empty2==empty3 && empty3==1 ||
@@ -46,7 +46,7 @@ empty2==empty5 && empty5==empty8 && empty8==1 ||
 empty3==empty6 && empty6==empty9 && empty9==1 ||
 empty1==empty5 && empty5==empty9 && empty9==1 ||
 empty3==empty5 && empty5==empty7 && empty7==1 ){
-alert ("Player 2: YOU WON !!!");
+alert ("Выиграл Игрок №2");
 history.go(0)
 }
 }
@@ -54,11 +54,11 @@ function turnchange(t){
 if (change == 1) {
 if (t == 0){
 t = 1;
-whogoesnow = "Turn: Player " + 1
+whogoesnow = "Ходят Крестики"
 }
 else {
 t = 0;
-whogoesnow = "Turn: Player " + 2
+whogoesnow = "Ходят Нолики" 
 }
 }
 else {
