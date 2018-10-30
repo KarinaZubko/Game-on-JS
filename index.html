@@ -1,250 +1,182 @@
 <!DOCTYPE html>
 <html lang="eng">
     
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-<title>Крестики Нолики</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  min-width: 250px;
+}
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style the header */
+.header {
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+</style>
 </head>
+<body>
 
-<body bgcolor="#999CC">
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">To Do List</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
 
-<p>&nbsp;</p>
+<ul id="myUL">
+</ul>
 
-<p><script name="JavaScript">
-function variables(){
-t = 1;
-change = 1;
-empty1 = -1;
-empty2 = -1;
-empty3 = -1;
-empty4 = -1;
-empty5 = -1;
-empty6 = -1;
-empty7 = -1;
-empty8 = -1;
-empty9 = -1;
-return;
-whogoesnow = "Ходят крестики"
-}
-function win(){
-if (empty1==empty2 && empty2==empty3 && empty3==0 ||
-empty4==empty5 && empty5==empty6 && empty6==0 ||
-empty7==empty8 && empty8==empty9 && empty9==0 ||
-empty1==empty4 && empty4==empty7 && empty7==0 ||
-empty2==empty5 && empty5==empty8 && empty8==0 ||
-empty3==empty6 && empty6==empty9 && empty9==0 ||
-empty1==empty5 && empty5==empty9 && empty9==0 ||
-empty3==empty5 && empty5==empty7 && empty7==0 ){
-alert ("Выиграли хрестики");
-history.go(0)
-}
-if (empty1==empty2 && empty2==empty3 && empty3==1 ||
-empty4==empty5 && empty5==empty6 && empty6==1 ||
-empty7==empty8 && empty8==empty9 && empty9==1 ||
-empty1==empty4 && empty4==empty7 && empty7==1 ||
-empty2==empty5 && empty5==empty8 && empty8==1 ||
-empty3==empty6 && empty6==empty9 && empty9==1 ||
-empty1==empty5 && empty5==empty9 && empty9==1 ||
-empty3==empty5 && empty5==empty7 && empty7==1 ){
-alert ("Выиграли нолики");
-history.go(0)
-}
-}
-function turnchange(t){
-if (change == 1) {
-if (t == 0){
-t = 1;
-whogoesnow = "Ходят Крестики"
-}
-else {
-t = 0;
-whogoesnow = "Ходят Нолики" 
-}
-}
-else {
-t = t;
-}
-change = 1
-return (t);
-}
-function changing(clicked){
-if (clicked == 1){
-spot = empty1 ;}
-if (clicked == 2){
-spot = empty2 ;}
-if (clicked == 3){
-spot = empty3 ;}
-if (clicked == 4){
-spot = empty4 ;}
-if (clicked == 5){
-spot = empty5 ;}
-if (clicked == 6){
-spot = empty6 ;}
-if (clicked == 7){
-spot = empty7 ;}
-if (clicked == 8){
-spot = empty8 ;}
-if (clicked == 9){
-spot = empty9 ;}
-if (spot == -1){
-if (t == 0){
-xo = " O " ;
-spot = 0
-}
-else {
-xo = " X " ;
-spot = 1
-}
-if (clicked == 1){
-empty1 = spot;}
-if (clicked == 2){
-empty2 = spot ;}
-if (clicked == 3){
-empty3 = spot ;}
-if (clicked == 4){
-empty4 = spot ;}
-if (clicked == 5){
-empty5 = spot ;}
-if (clicked == 6){
-empty6 = spot ;}
-if (clicked == 7){
-empty7 = spot ;}
-if (clicked == 8){
-empty8 = spot ;}
-if (clicked == 9){
-empty9 = spot ;}
-}
-else {
-if (spot == 0){
-xo = " O ";}
-if (spot == 1){
-xo = " X ";}
-change = 0
-}
-return (xo) ;
-}
-function change_b1(form){
-clicked = 1;
-changing(clicked) ;
-t = turnchange(t) ;
-form.b1.value = xo;
-form.whoseturn.value = whogoesnow
-win();
-return;
-}
-function change_b2(form){
-clicked = 2;
-changing(clicked) ;
-form.b2.value = xo;
-t = turnchange(t) ;
-form.whoseturn.value = whogoesnow
-win();
-return;
-}
-function change_b3(form){
-clicked = 3;
-changing(clicked) ;
-form.b3.value = xo;
-t = turnchange(t) ;
-form.whoseturn.value = whogoesnow
-win();
-return;
-}
-function change_b4(form){
-clicked = 4;
-changing(clicked) ;
-form.b4.value = xo;
-t = turnchange(t) ;
-form.whoseturn.value = whogoesnow
-win();
-return;
-}
-function change_b5(form){
-clicked = 5;
-changing(clicked) ;
-form.b5.value = xo;
-t = turnchange(t) ;
-form.whoseturn.value = whogoesnow
-win();
-return;
-}
-function change_b6(form){
-clicked = 6;
-changing(clicked) ;
-form.b6.value = xo;
-t = turnchange(t) ;
-form.whoseturn.value = whogoesnow
-win();
-return;
-}
-function change_b7(form){
-clicked = 7;
-changing(clicked) ;
-form.b7.value = xo;
-t = turnchange(t) ;
-form.whoseturn.value = whogoesnow
-win();
-return;
-}
-function change_b8(form){
-clicked = 8;
-changing(clicked) ;
-form.b8.value = xo;
-t = turnchange(t) ;
-form.whoseturn.value = whogoesnow
-win();
-return;
-}
-function change_b9(form){
-clicked = 9;
-changing(clicked) ;
-form.b9.value = xo;
-t = turnchange(t) ;
-form.whoseturn.value = whogoesnow
-win();
-return;
-}
-</script><script name="JavaScript">
-variables();
-</script></p>
+<script>
 
-<h1 align="center"><font color="#FFFFF">Крестики-нолики</font></h1>
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
 
-<form>
-    <p align="center"><input type="button" name="whoseturn"
-    value="Ходят крестики"> <br>
-    <br>
-    </p>
-    <div align="center"><center><table border="0">
-        <tr>
-            <td><input type="button" name="b1" value=" "
-            onclick="change_b1(this.form)"> </td>
-            <td><input type="button" name="b2" value=" "
-            onclick="change_b2(this.form)"> </td>
-            <td><input type="button" name="b3" value=" "
-            onclick="change_b3(this.form)"> </td>
-        </tr>
-        <tr>
-            <td><input type="button" name="b4" value=" "
-            onclick="change_b4(this.form)"> </td>
-            <td><input type="button" name="b5" value=" "
-            onclick="change_b5(this.form)"> </td>
-            <td><input type="button" name="b6" value=" "
-            onclick="change_b6(this.form)"> </td>
-        </tr>
-        <tr>
-            <td><input type="button" name="b7" value=" "
-            onclick="change_b7(this.form)"> </td>
-            <td><input type="button" name="b8" value=" "
-            onclick="change_b8(this.form)"> </td>
-            <td><input type="button" name="b9" value=" "
-            onclick="change_b9(this.form)"> </td>
-        </tr>
-    </table>
-    </center></div><p align="center"><br>
-    <input type="button" value="Новая игра"
-    onclick="history.go(0)"> </p>
-</form>
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
 
 </body>
 </html>
