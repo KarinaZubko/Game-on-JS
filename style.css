@@ -1,0 +1,45 @@
+
+body{
+    background: url(wall.jpg) no-repeat;
+    background-size: 110%;
+}
+h2{
+    color: white;
+    font-family: monospace;
+    text-align: left;
+}
+.background{
+    table-layout: fixed;
+    border-spacing: 0;
+}
+.background td{
+    padding:  0;
+}
+.lava, .actor{
+    background: red;
+}
+.wall{
+    background: white;
+    border: solid 3px #333;
+    box-sizing: content-box;
+}
+.actor{
+    position: absolute;
+}
+.coin{
+    background: #e2e838;
+}
+.player{
+    background: white ;
+}
+.lost .player{
+    background: #a04040;
+}
+.won .player {
+    background: green;
+}
+
+.game{
+    position: relative;
+    overflow: hidden;
+}
