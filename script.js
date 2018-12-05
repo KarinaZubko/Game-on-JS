@@ -29,7 +29,7 @@ var LEVELS = [
    "                                      xx!!!!!!!!!!xx         xx             xx                               x!x  ",
    "                                       xxxxxxxxxx!!x         x                                    o   o   o  x!x  ",
    "                                                xx!x         x     o   o                                    xx!x  ",
-   "                                                 x!x         x                                xxxxxxxxxxxxxxx!!x  ",
+   "                                                 x!x         x                          xxxxxxxxxxxxxxxxxxxxx!!x  ",
    "                                                 xvx         x     x   x                  !!!!!!!!!!!!!!!!!!!!xx  ",
    "                                                             xx  |   |   |  xx            xxxxxxxxxxxxxxxxxxxxx   ",
    "                                                              xx!!!!!!!!!!!xx            v                        ",
