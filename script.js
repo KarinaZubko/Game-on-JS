@@ -154,7 +154,7 @@ var actorchars =  {
 	"@": Player,
 	"o": Coin,
 	"=": Lava,
-	"|": Lava,
+	"!": Lava,
 	"v": Lava
 };
 
