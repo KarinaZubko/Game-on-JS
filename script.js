@@ -422,13 +422,7 @@ Player.prototype.act = function(step, level, keys) {
     this.size.y -= step;
   }
 };
-var score=0;
-function drawScore()
-{
-    this.font="16pt Arial";
-    this.fillStyle = "FFFF";
-    this.fillText("Score:"+score,clearInterval);
-}
+
 
 var score=0;
 Level.prototype.playerTouched = function(type, actor) {
