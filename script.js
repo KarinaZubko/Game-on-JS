@@ -136,8 +136,6 @@ var LEVELS = [
    "                                                                                                              "]
 ];
 
-var simpleLevel = new Level(simpleLevelPlan);
-var display = new DOMDisplay(document.body, simpleLevel);
 
 function Vector(x, y) {
 	this.x = x; this.y = y;
