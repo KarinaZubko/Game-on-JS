@@ -154,9 +154,11 @@ var actorchars =  {
 	"@": Player,
 	"o": Coin,
 	"=": Lava,
-	"|": Lava,
+	"!": Lava,
 	"v": Lava
 };
+
+var score = 0;
 
 function Player(pos) {
 	this.pos = pos.plus(new Vector(0, -.5));
@@ -182,8 +184,7 @@ Lava.prototype.type = "Lava";
 function Coin(pos) {
 	this.basePos = this.pos = pos;
 	this.size = new Vector(.6, .6);
-	// take a look back
-	this.wobble = Math.random() * Math.PI * 2;
+  this.wobble = Math.random() * Math.PI * 2;
 }
 Coin.prototype.type = "coin";
 
