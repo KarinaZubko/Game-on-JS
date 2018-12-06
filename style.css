@@ -39,7 +39,9 @@ h2{
     background: green;
 }
 
-.game{
-    position: relative;
-    overflow: hidden;
+.game {
+  overflow: hidden;
+  max-width: 600px;
+  max-height: 450px;
+  position: relative;
 }
