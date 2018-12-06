@@ -423,6 +423,14 @@ Player.prototype.act = function(step, level, keys) {
   }
 };
 var score=0;
+function drawScore()
+{
+    this.font="16pt Arial";
+    this.fillStyle = "FFFF";
+    this.fillText("Score:"+score,clearInterval);
+}
+
+var score=0;
 Level.prototype.playerTouched = function(type, actor) {
   if (type == "lava" && this.status == null) {
     this.status = "lost";
