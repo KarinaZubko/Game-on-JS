@@ -422,7 +422,7 @@ Player.prototype.act = function(step, level, keys) {
     this.size.y -= step;
   }
 };
-
+var score=0;
 Level.prototype.playerTouched = function(type, actor) {
   if (type == "lava" && this.status == null) {
     this.status = "lost";
@@ -432,6 +432,7 @@ Level.prototype.playerTouched = function(type, actor) {
       return other != actor;
     });
     if (!this.actors.some(function(actor) {
+      score++;
       return actor.type == "coin";
     })) {
       this.status = "won";
